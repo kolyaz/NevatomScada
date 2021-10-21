@@ -1,0 +1,199 @@
+.MainPage{
+    width: 100vh;
+    /* height: 100vh; */
+}
+.Spiner{
+    position: absolute;
+}
+.Button{
+    cursor:pointer;
+}
+
+.Heat{
+    fill: red;
+}
+.Cool{
+    fill: #0a58ca;
+}
+.VentOn{
+    fill: #00A763;
+}
+.RecOn{
+    fill: #FF7024;
+}
+
+
+
+#ButtonStop{
+    display: none;
+}
+#ButtonStart:hover, #ButtonStop :hover{
+    cursor:pointer;
+}
+
+/* #VectorDanger{
+     display: none;
+} */
+
+/* #ShedullerActive{
+    display: none;
+} */
+
+#VectorSun{
+    fill:yellow;
+    display: none;
+}
+
+#VectorSnow{
+    fill:blue;
+    /* display: none; */
+}
+
+.strelkaNarWinter{
+    fill: #3a708c;
+}
+.strelkaNarSummer{
+    fill: #3a708c;
+}
+
+
+.strelkaKomWinter{
+    fill: #b94f33;
+}
+.strelkaKomSummer{
+    fill: #b94f33;
+}
+
+.strelkaVytWinter{
+    fill: #84c6d7;
+}
+.strelkaVytSummer{
+    fill: #b94f33;
+}
+
+.strelkaPritWinter{
+    fill: #f19b74;
+}
+.strelkaPritSummer{
+    fill: #3a708c;
+}
+
+
+
+
+
+  .StrelkaBlink {
+    animation-name: sblinker;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 0.25s;
+    -webkit-animation-name: sblinker;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 0.25s;
+    -moz-animation-name: sblinker;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+    -moz-animation-duration: 0.25s;
+    -ms-animation-name: sblinker;
+    -ms-animation-iteration-count: 1;
+    -ms-animation-timing-function: linear;
+    -ms-animation-duration: 0.25s;
+    -o-animation-name: sblinker;
+    -o-animation-iteration-count: 1;
+    -o-animation-timing-function: linear;
+    -o-animation-duration: 0.25s;
+  }
+   
+  @keyframes sblinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+  }
+   
+  @-webkit-keyframes sblinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+  }
+
+  @-moz-keyframes sblinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+  }
+
+  @-ms-keyframes sblinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+  }
+
+  @-o-keyframes sblinker {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+  }
+
+   .rotate {
+    animation: rotate 5s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+
+
+.things{
+  cursor: pointer;
+  
+}
+
+.pHoover:hover, .things:hover{
+  fill: #ff7024; 
+  text-decoration: underline; /* Добавляем подчеркивание */
+  cursor: pointer;
+  animation-name: _things;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  -webkit-animation-name: _things;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-name: _things;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: linear;
+  -moz-animation-duration: 0.5s;
+  -ms-animation-name: _things;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-timing-function: linear;
+  -ms-animation-duration: 0.5s;
+  -o-animation-name: _things;
+  -o-animation-iteration-count: 1;
+  -o-animation-timing-function: linear;
+  -o-animation-duration: 0.5s;
+}
+@keyframes _things {
+  from {fill: black; }
+  to { fill: #ff7024;}
+}
+ 
+@-webkit-keyframes _things {
+  from {fill: black;  }
+  to { fill: #ff7024;}
+}
+
+@-moz-keyframes _things {
+  from {fill: black;  }
+  to { fill: #ff7024;}
+}
+
+@-ms-keyframes _things {
+  from { fill: black; }
+  to { fill: #ff7024;}
+}
+
+@-o-keyframes _things {
+  from {fill: black;  }
+  to { fill: #ff7024;}
+}

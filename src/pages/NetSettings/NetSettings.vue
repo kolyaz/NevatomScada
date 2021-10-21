@@ -1,0 +1,227 @@
+<template>
+  <q-page  class="some">
+    <div>
+    <div class="q-pa-md" style="max-width:330px">
+    <div class="q-gutter-md" style="min-width: 330px">
+      <q-input
+        color="teal"
+        filled
+        v-model="loginSTA"
+        label="Имя роутера "
+        hint="введите имя роутера "
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'введите  имя роутера']">
+        <template v-slot:prepend>
+          <q-icon name="router" color="orange"/>
+        </template>
+      </q-input>
+
+      <q-input
+      color="teal"
+      v-model="passwordSTA"
+      label="Пароль"
+      filled :type="isPwdS ? 'password' : 'text'" hint="введите  пароль"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'введите  пароль']">
+        <template v-slot:prepend>
+          <q-icon name="wifi_lock" color="orange" />
+        </template>
+        <template v-slot:append>
+            <q-icon
+              :name="isPwdS ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwdS = !isPwdS"
+            />
+            <!-- <q-icon name="https" /> -->
+        </template>
+      </q-input>
+
+      <q-input
+      color="teal"
+      filled
+      v-model="loginAp"
+      label="Имя точки доступа"
+      hint="введите новое имя точки доступа"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'введите имя точки доступа']">
+        <template v-slot:prepend>
+          <q-icon name="cell_wifi" color="green" />
+        </template>
+      </q-input>
+
+      <q-input
+      color="teal"
+      v-model="passwordAP"
+      label="Пароль точки доступа"
+      filled :type="isPwdA ? 'password' : 'text'" hint="введите  пароль"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'введите  пароль']">
+        <template v-slot:prepend>
+          <q-icon name="lock" color="green" />
+        </template>
+        <template v-slot:append>
+            <q-icon
+              :name="isPwdA ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwdA = !isPwdA"
+            />
+            <!-- <q-icon name="https" /> -->
+        </template>
+      </q-input>
+
+      <q-input
+      color="teal"
+      filled
+      v-model="loginNet"
+      label="Имя удаленного доступа"
+      hint="введите имя удаленного доступа"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'введите имя удаленного доступа']">
+        <template v-slot:prepend>
+          <q-icon name="how_to_reg" color="deep-orange" />
+        </template>
+      </q-input>
+
+      <q-input
+      color="teal"
+      v-model="passwordNet"
+      label="Пароль удаленного доступа"
+      filled :type="isPwd ? 'password' : 'text'" hint="введите  пароль"
+      lazy-rules
+      :rules="[ val => val && val.length > 0 || 'введите  пароль']">
+        <template v-slot:prepend>
+          <q-icon name="vpn_lock" color="deep-orange" />
+        </template>
+        <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+            />
+            <!-- <q-icon name="https" /> -->
+        </template>
+      </q-input>
+
+    </div>
+
+  <div style="margin-top:40px" class=" q-gutter-md">
+    <div>
+      <q-btn @click="SetNetSettings"   style="min-width: 330px" color="secondary" icon="done" label="Применить" />
+    </div>
+  </div>
+
+  </div>
+
+    <div>
+      <AlarmText
+        :alarms="alarms"
+     />
+    </div>
+    </div>
+  </q-page>
+</template>
+
+<script>
+import { defineComponent, ref } from 'vue';
+import { serverMessageTry } from 'src/fun/websocket/websocket.js';
+import { useQuasar } from 'quasar';
+import AlarmText from 'components/AlarmText/AlarmText.vue';
+
+export default defineComponent({
+  name: 'PageSettings',
+  components: {
+    AlarmText,
+  },
+  data() {
+    return {
+      loginSTA: '',
+      passwordSTA: '',
+      loginAp: '',
+      passwordAP: '',
+      loginNet: '',
+      passwordNet: '',
+      isLoad: false,
+      alarms: '',
+    };
+  },
+  methods: {
+    OnMount() {
+      const onMountSend = {
+        getNetSettings: 1,
+        Message: 'getNetSettings',
+      };
+      this.$socket.send(JSON.stringify(onMountSend));
+    },
+    IfName(data) {
+      if (data) {
+        return data;
+      }
+      return false;
+    },
+    WebSockets(mount) {
+      const $q = useQuasar();
+      try {
+        if (mount) {
+          this.$socket.onmessage = (data) => {
+            const getJson = serverMessageTry(data.data);
+            console.log(getJson);
+            if (getJson.Message) {
+              $q.notify({
+                message: getJson.Message,
+                color: 'secondary',
+                position: 'bottom',
+              });
+            }
+            if (getJson.NetSettings) {
+              this.loginSTA = this.IfName(getJson.NetSettings.loginSTA);
+              this.passwordSTA = this.IfName(getJson.NetSettings.passwordSTA);
+              this.loginAp = this.IfName(getJson.NetSettings.loginAp);
+              this.passwordAP = this.IfName(getJson.NetSettings.passwordAP);
+              this.loginNet = this.IfName(getJson.NetSettings.loginNet);
+              this.passwordNet = this.IfName(getJson.NetSettings.passwordNet);
+            }
+            if (getJson.PLCdata.alarms) {
+              this.$global.$emit('PLCdata', getJson.PLCdata);
+              this.alarms = getJson.PLCdata.alarms;
+            }
+          };
+        }
+        return '';
+      } catch (error) {
+        return '';
+      }
+    },
+    SetNetSettings() {
+      const sendMes = {
+        setNetSettings: {
+          loginSTA: this.loginSTA,
+          passwordSTA: this.passwordSTA,
+          loginAp: this.loginAp,
+          passwordAP: this.passwordAP,
+          loginNet: this.loginNet,
+          passwordNet: this.passwordNet,
+        },
+        Message: 'setNetSettings',
+      };
+      this.$socket.send(JSON.stringify(sendMes));
+    },
+  },
+  mounted() {
+    this.OnMount();
+    this.mount = true;
+    this.WebSockets(this.mount);
+  },
+  setup() {
+    return {
+      isPwd: ref(true),
+      isPwdS: ref(true),
+      isPwdA: ref(true),
+      // ustH: ref(''),
+      // ustС: ref(''),
+      // seson: ref(''),
+      // pritVentNom: ref(''),
+      // vitVentNom: ref(''),
+    };
+  },
+});
+</script>
