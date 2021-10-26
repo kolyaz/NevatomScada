@@ -156,7 +156,7 @@ export default defineComponent({
       if (data) {
         return data;
       }
-      return false;
+      return '';
     },
     WebSockets(mount) {
       const $q = useQuasar();
