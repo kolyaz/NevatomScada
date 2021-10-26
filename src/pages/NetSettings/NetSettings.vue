@@ -39,7 +39,7 @@
       <q-input
       color="teal"
       filled
-      v-model="loginAp"
+      v-model="loginAP"
       label="Имя точки доступа"
       hint="введите новое имя точки доступа"
       lazy-rules
@@ -136,7 +136,7 @@ export default defineComponent({
     return {
       loginSTA: '',
       passwordSTA: '',
-      loginAp: '',
+      loginAP: '',
       passwordAP: '',
       loginNet: '',
       passwordNet: '',
@@ -154,8 +154,10 @@ export default defineComponent({
     },
     IfName(data) {
       if (data) {
+        console.log(data);
         return data;
       }
+      console.log(data);
       return '';
     },
     WebSockets(mount) {
@@ -175,7 +177,7 @@ export default defineComponent({
             if (getJson.NetSettings) {
               this.loginSTA = this.IfName(getJson.NetSettings.loginSTA);
               this.passwordSTA = this.IfName(getJson.NetSettings.passwordSTA);
-              this.loginAp = this.IfName(getJson.NetSettings.loginAp);
+              this.loginAP = this.IfName(getJson.NetSettings.loginAP);
               this.passwordAP = this.IfName(getJson.NetSettings.passwordAP);
               this.loginNet = this.IfName(getJson.NetSettings.loginNet);
               this.passwordNet = this.IfName(getJson.NetSettings.passwordNet);
@@ -216,11 +218,6 @@ export default defineComponent({
       isPwd: ref(true),
       isPwdS: ref(true),
       isPwdA: ref(true),
-      // ustH: ref(''),
-      // ustС: ref(''),
-      // seson: ref(''),
-      // pritVentNom: ref(''),
-      // vitVentNom: ref(''),
     };
   },
 });
