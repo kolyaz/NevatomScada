@@ -198,7 +198,7 @@ export default defineComponent({
         setNetSettings: {
           loginSTA: this.loginSTA,
           passwordSTA: this.passwordSTA,
-          loginAp: this.loginAp,
+          loginAP: this.loginAP,
           passwordAP: this.passwordAP,
           loginNet: this.loginNet,
           passwordNet: this.passwordNet,
