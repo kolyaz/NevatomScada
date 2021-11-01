@@ -8,6 +8,7 @@ const routes = [
       { path: '/trends', component: () => import('src/pages/Trend/Trend.vue') },
       { path: '/alarms', component: () => import('src/pages/AlarmsMagazine/AlarmsMagazine.vue') },
       { path: '/net_settings', component: () => import('src/pages/NetSettings/NetSettings.vue') },
+      { path: '/modbus_settings', component: () => import('src/pages/ModbusSettings/ModbusSettings.vue') },
     ],
   },
 

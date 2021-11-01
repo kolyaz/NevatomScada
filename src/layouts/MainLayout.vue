@@ -50,7 +50,7 @@
 <script>
 import { ref } from 'vue';
 import Header from 'components/Header/Header.vue';
-import EssentialLink from 'components/EssentialLink.vue';
+import EssentialLink from 'src/components/Menu/EssentialLink.vue';
 
 // const linksList = [
 //   {

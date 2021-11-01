@@ -104,10 +104,18 @@
 
     </div>
 
-  <div style="margin-top:40px" class=" q-gutter-md">
-    <div>
-      <q-btn @click="SetNetSettings"   style="min-width: 330px" color="secondary" icon="done" label="Применить" />
+    <div style="margin-top:40px" class=" q-gutter-md">
+      <div>
+        <q-btn @click="SetNetSettings"   style="min-width: 330px" color="secondary" icon="done" label="Применить" />
+      </div>
     </div>
+
+      <div style="margin-top:40px" class=" q-gutter-md">
+      <div>
+        <q-btn @click="GetModbusPage" :to="modbusLink"  style="min-width: 330px" color="warning" icon="hub" label="Настройки Modbus" />
+      </div>
+    </div>
+
   </div>
 
   </div>
@@ -116,7 +124,6 @@
       <AlarmText
         :alarms="alarms"
      />
-    </div>
     </div>
   </q-page>
 </template>
@@ -128,7 +135,7 @@ import { useQuasar } from 'quasar';
 import AlarmText from 'components/AlarmText/AlarmText.vue';
 
 export default defineComponent({
-  name: 'PageSettings',
+  name: 'PageNetSettings',
   components: {
     AlarmText,
   },
@@ -142,6 +149,7 @@ export default defineComponent({
       passwordNet: '',
       isLoad: false,
       alarms: '',
+      modbusLink: '/modbus_settings',
     };
   },
   methods: {
@@ -154,7 +162,6 @@ export default defineComponent({
     },
     IfName(data) {
       if (data) {
-        console.log(data);
         return data;
       }
       console.log(data);
@@ -166,7 +173,7 @@ export default defineComponent({
         if (mount) {
           this.$socket.onmessage = (data) => {
             const getJson = serverMessageTry(data.data);
-            console.log(getJson);
+            // console.log(getJson);
             if (getJson.Message) {
               $q.notify({
                 message: getJson.Message,
@@ -206,6 +213,10 @@ export default defineComponent({
         Message: 'setNetSettings',
       };
       this.$socket.send(JSON.stringify(sendMes));
+    },
+    GetModbusPage() {
+      const r = 1;
+      return r;
     },
   },
   mounted() {
