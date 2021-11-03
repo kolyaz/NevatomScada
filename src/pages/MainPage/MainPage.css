@@ -24,9 +24,6 @@
 
 
 
-#ButtonStop{
-    display: none;
-}
 #ButtonStart:hover, #ButtonStop :hover{
     cursor:pointer;
 }
@@ -41,7 +38,7 @@
 
 #VectorSun{
     fill:yellow;
-    display: none;
+    /* display: none; */
 }
 
 #VectorSnow{
@@ -84,51 +81,17 @@
 
   .StrelkaBlink {
     animation-name: sblinker;
-    animation-iteration-count: 1;
     animation-timing-function: linear;
     animation-duration: 0.25s;
     -webkit-animation-name: sblinker;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-duration: 0.25s;
-    -moz-animation-name: sblinker;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: linear;
-    -moz-animation-duration: 0.25s;
-    -ms-animation-name: sblinker;
-    -ms-animation-iteration-count: 1;
-    -ms-animation-timing-function: linear;
-    -ms-animation-duration: 0.25s;
-    -o-animation-name: sblinker;
-    -o-animation-iteration-count: 1;
-    -o-animation-timing-function: linear;
-    -o-animation-duration: 0.25s;
+
   }
    
   @keyframes sblinker {
     from { opacity: 1.0; }
     to { opacity: 0.0; }
   }
-   
-  @-webkit-keyframes sblinker {
-    from { opacity: 1.0; }
-    to { opacity: 0.0; }
-  }
 
-  @-moz-keyframes sblinker {
-    from { opacity: 1.0; }
-    to { opacity: 0.0; }
-  }
-
-  @-ms-keyframes sblinker {
-    from { opacity: 1.0; }
-    to { opacity: 0.0; }
-  }
-
-  @-o-keyframes sblinker {
-    from { opacity: 1.0; }
-    to { opacity: 0.0; }
-  }
 
    .rotate {
     animation: rotate 5s linear infinite;

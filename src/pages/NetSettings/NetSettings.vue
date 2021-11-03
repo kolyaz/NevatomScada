@@ -1,6 +1,5 @@
 <template>
   <q-page  class="some">
-    <div>
     <div class="q-pa-md" style="max-width:330px">
     <div class="q-gutter-md" style="min-width: 330px">
       <q-input
@@ -112,11 +111,9 @@
 
       <div style="margin-top:40px" class=" q-gutter-md">
       <div>
-        <q-btn @click="GetModbusPage" :to="modbusLink"  style="min-width: 330px" color="warning" icon="hub" label="Настройки Modbus" />
+        <q-btn @click="GetModbusPage" class="text-black"  style="min-width: 330px" color="warning" icon="hub" label="Настройки Modbus" />
       </div>
     </div>
-
-  </div>
 
   </div>
 
@@ -150,6 +147,7 @@ export default defineComponent({
       isLoad: false,
       alarms: '',
       modbusLink: '/modbus_settings',
+      q: useQuasar(),
     };
   },
   methods: {
@@ -168,14 +166,14 @@ export default defineComponent({
       return '';
     },
     WebSockets(mount) {
-      const $q = useQuasar();
+      // const $q = useQuasar();
       try {
         if (mount) {
           this.$socket.onmessage = (data) => {
             const getJson = serverMessageTry(data.data);
             // console.log(getJson);
             if (getJson.Message) {
-              $q.notify({
+              this.q.notify({
                 message: getJson.Message,
                 color: 'secondary',
                 position: 'bottom',
@@ -201,22 +199,68 @@ export default defineComponent({
       }
     },
     SetNetSettings() {
-      const sendMes = {
-        setNetSettings: {
-          loginSTA: this.loginSTA,
-          passwordSTA: this.passwordSTA,
-          loginAP: this.loginAP,
-          passwordAP: this.passwordAP,
-          loginNet: this.loginNet,
-          passwordNet: this.passwordNet,
+      this.q.dialog({
+        title: 'Сетевые настройки',
+        message: 'Изменить сетевые настройки ???',
+        cancel: {
+          push: false,
+          label: 'Выход',
         },
-        Message: 'setNetSettings',
-      };
-      this.$socket.send(JSON.stringify(sendMes));
+        ok: {
+          push: false,
+          label: 'Да',
+        },
+      }).onOk(() => {
+        const sendMes = {
+          setNetSettings: {
+            loginSTA: this.loginSTA,
+            passwordSTA: this.passwordSTA,
+            loginAP: this.loginAP,
+            passwordAP: this.passwordAP,
+            loginNet: this.loginNet,
+            passwordNet: this.passwordNet,
+          },
+          Message: 'setNetSettings',
+        };
+        this.$socket.send(JSON.stringify(sendMes));
+      }).onCancel(() => {
+        // console.log('>>>> Cancel')
+      });
     },
     GetModbusPage() {
-      const r = 1;
-      return r;
+      this.q.dialog({
+        title: 'Настройки Modbus',
+        message: 'Введите пароль администратора',
+        prompt: {
+          model: '',
+          type: 'text', // optional
+          isValid: (val) => val.length > 1,
+        },
+        cancel: {
+          push: false,
+          label: 'Выход',
+        },
+        ok: {
+          push: false,
+          label: 'Войти',
+        },
+      }).onOk((data) => {
+        if (data === '312') {
+          console.log('access assepted');
+          this.$router.push('modbus_settings');
+          return;
+        }
+        this.q.notify({
+          message: 'Не верный пароль!',
+          color: 'negative',
+          position: 'bottom',
+        });
+        console.log('access denied');
+      }).onCancel(() => {
+        // console.log('>>>> Cancel')
+      }).onDismiss(() => {
+        // console.log('I am triggered on both OK and Cancel')
+      });
     },
   },
   mounted() {

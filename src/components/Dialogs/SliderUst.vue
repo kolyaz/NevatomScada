@@ -7,9 +7,6 @@
           <span class="q-ml-sm">Уставка температуры.</span>
         </q-card-section>
       <q-item>
-        <!-- <q-item-section avatar>
-          <q-icon color="deep-orange" name="brightness_medium" />
-        </q-item-section> -->
         <q-item-section>
           <q-slider
             v-model="slideVol"
@@ -46,12 +43,11 @@ export default {
       this.confirm = this.dialog;
     },
     seson() {
-      if (this.seson === '1') {
+      if (this.seson) {
         this.slideVol = this.ustC;
+        return;
       }
-      if (this.seson === '0') {
-        this.slideVol = this.ustH;
-      }
+      this.slideVol = this.ustH;
     },
   },
   props: {
@@ -70,19 +66,16 @@ export default {
       this.$emit('setDialog', !this.setDialog);
     },
     ChangeUst() {
-      if (this.seson === '1') {
+      if (this.seson) {
         return {
           Message: 'setMain',
           ustC: this.slideVol,
         };
       }
-      if (this.seson === '0') {
-        return {
-          Message: 'setMain',
-          ustH: this.slideVol,
-        };
-      }
-      return this.slideVol;
+      return {
+        Message: 'setMain',
+        ustH: this.slideVol,
+      };
     },
   },
   setup(props) {

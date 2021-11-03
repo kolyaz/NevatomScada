@@ -6,6 +6,7 @@
       :columns="columns"
       row-key="name"
       binary-state-sort
+      :rows-per-page-label="`Записей на страницу`"
     >
       <template v-slot:top-right>
         <q-btn

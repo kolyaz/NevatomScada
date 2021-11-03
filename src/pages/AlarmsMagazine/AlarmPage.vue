@@ -8,8 +8,8 @@
         :rows="rows"
         :columns="columns"
         row-key="name"
-        :pagination="initialPagination"
-        hide-pagination
+        :rows-per-page-label="`Записей на страницу`"
+        v-model:pagination="pagination"
         >
         <template v-slot:top-right>
         <q-btn
@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
 import { exportFile, useQuasar } from 'quasar';
 
 function wrapCsvValue(val, formatFn) {
@@ -67,17 +66,16 @@ function wrapCsvValue(val, formatFn) {
   return `"${formatted}"`;
 }
 
-export default defineComponent({
+export default {
   name: 'AlarmPage',
   data() {
     return {
-      initialPagination: {
+      q: useQuasar(),
+      pagination: {
         sortBy: 'asc',
         descending: false,
         page: 1,
         rowsPerPage: 8,
-        disable: true,
-        // rowsNumber: xx if getting data from a server
       },
       columns: [
         {
@@ -122,7 +120,6 @@ export default defineComponent({
       }
     },
     exportTable() {
-      const $q = useQuasar();
       // naive encoding to csv format
       const content = [this.columns.map((col) => wrapCsvValue(col.label))].concat(
         this.rows.map((row) => this.columns.map((col) => wrapCsvValue(
@@ -140,8 +137,8 @@ export default defineComponent({
       );
 
       if (status !== true) {
-        $q.notify({
-          message: 'Browser denied file download...',
+        this.q.notify({
+          message: 'Нет доступа...',
           color: 'negative',
           icon: 'warning',
         });
@@ -155,16 +152,48 @@ export default defineComponent({
       }));
     },
     deleteAlarms() {
-      this.$socket.send(JSON.stringify({
-        deleteAlarms: 1,
-        Message: 'deleteAlarms',
-      }));
+      this.q.dialog({
+        title: 'Очистка журнала',
+        message: 'Введите пароль администратора',
+        prompt: {
+          model: '',
+          type: 'text', // optional
+          isValid: (val) => val.length > 1,
+        },
+        cancel: {
+          push: false,
+          label: 'Выход',
+        },
+        ok: {
+          push: false,
+          label: 'Очистка',
+        },
+      }).onOk((data) => {
+        if (data === '312') {
+          console.log('access assepted');
+          this.$socket.send(JSON.stringify({
+            deleteAlarms: 1,
+            Message: 'deleteAlarms',
+          }));
+          return;
+        }
+        this.q.notify({
+          message: 'Не верный пароль!',
+          color: 'negative',
+          position: 'bottom',
+        });
+        console.log('access denied');
+      }).onCancel(() => {
+        // console.log('>>>> Cancel')
+      }).onDismiss(() => {
+        // console.log('I am triggered on both OK and Cancel')
+      });
     },
   },
   mounted() {
     this.createTable();
   },
-});
+};
 </script>
 <style  scoped>
  .btn{

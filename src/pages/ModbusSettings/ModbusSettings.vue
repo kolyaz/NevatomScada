@@ -15,8 +15,8 @@
 
     <div class="q-pa-md">
         <q-btn
-        class="q-ml-sm btn"
-          color="positive"
+        class="q-ml-sm btn text-black"
+          color="warning"
           icon-right="save"
           label="Сохранить настройки"
           no-caps

@@ -38,7 +38,7 @@
         />
       </q-list>
     </q-drawer>
-    <q-page-container   style="min-width: 300px;">
+    <q-page-container  :style=" `width:100vw;`">
       <!-- <Spinner/> -->
       <router-view
       @alarmText="genBadge"
@@ -51,43 +51,6 @@
 import { ref } from 'vue';
 import Header from 'components/Header/Header.vue';
 import EssentialLink from 'src/components/Menu/EssentialLink.vue';
-
-// const linksList = [
-//   {
-//     title: 'Главная',
-//     caption: 'Главная',
-//     icon: 'house',
-//     link: '/',
-//   },
-//   {
-//     title: 'Основные настройки',
-//     caption: 'Основные настройки',
-//     icon: 'settings',
-//     link: 'settings',
-//   },
-//   {
-//     title: 'Графики',
-//     caption: 'Графики',
-//     icon: 'trending_up',
-//     link: 'trends',
-//   },
-//   {
-//     title: 'Журнал аварий',
-//     caption: 'Журнал аварий',
-//     icon: 'warning',
-//     link: 'alarms',
-//     badge: 5,
-//   },
-//   {
-//     title: 'Сетевые настройки',
-//     caption: 'Сетевые настройки',
-//     icon: 'public',
-//     link: 'net_settings',
-//   },
-// ];
-// import { useQuasar } from 'quasar';
-// import { serverMessageTry } from 'src/fun/websocket/websocket.js';
-// import Spinner from '../components/Spinner/Spinner.vue';
 
 export default {
   name: 'MainLayout',

@@ -23,8 +23,8 @@
         color="blue-grey-1"
         text-color="primary"
         :options="[
-          {label: 'Зима', value: '0'},
-          {label: 'Лето', value: '1'}
+          {label: 'Зима', value: 0},
+          {label: 'Лето', value: 1}
         ]"
       />
         </q-item-section>
@@ -58,14 +58,16 @@ export default {
     },
   },
   props: {
-    seson: String,
+    seson: Number,
     dialog: Boolean,
   },
   methods: {
     setUst() {
-      const ust = this.ChangeUst();
       this.$emit('setDialog', !this.setDialog);
-      this.$socket.send(JSON.stringify(ust));
+      this.$socket.send(JSON.stringify({
+        Message: 'setMain',
+        seson: this.changeModel.toString(),
+      }));
     },
     exitDialog() {
       this.$emit('setDialog', !this.setDialog);
@@ -73,7 +75,7 @@ export default {
     ChangeUst() {
       return {
         Message: 'setMain',
-        seson: this.changeModel,
+        seson: this.changeModel.toString(),
       };
     },
     // setup(props) {

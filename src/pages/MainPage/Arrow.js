@@ -9,24 +9,24 @@ let index = 0;
 let index2 = 0;
 const ArrowBlink = (idClass1, idClass2, idClass3, idClass4) => {
   const arrClass1 = document.querySelectorAll(`.${idClass1}`);
-  arrClass1.forEach((item) => {
-    item.classList.remove('StrelkaBlink');
-  });
+  // arrClass1.forEach((item) => {
+  //   item.classList.remove('StrelkaBlink');
+  // });
 
   const arrClass2 = document.querySelectorAll(`.${idClass2}`);
-  arrClass2.forEach((item) => {
-    item.classList.remove('StrelkaBlink');
-  });
+  // arrClass2.forEach((item) => {
+  //   item.classList.remove('StrelkaBlink');
+  // });
 
   const arrClass3 = document.querySelectorAll(`.${idClass3}`);
-  arrClass3.forEach((item) => {
-    item.classList.remove('StrelkaBlink');
-  });
+  // arrClass3.forEach((item) => {
+  //   item.classList.remove('StrelkaBlink');
+  // });
 
   const arrClass4 = document.querySelectorAll(`.${idClass4}`);
-  arrClass4.forEach((item) => {
-    item.classList.remove('StrelkaBlink');
-  });
+  // arrClass4.forEach((item) => {
+  //   item.classList.remove('StrelkaBlink');
+  // });
 
   const count = arrClass1.length + arrClass2.length;
   const count2 = arrClass3.length + arrClass4.length;

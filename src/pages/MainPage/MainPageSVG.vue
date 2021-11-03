@@ -1,15 +1,15 @@
-<template class='main'>
+<template >
 
-<div  class="svg flex" >
+<div  class="main " >
         <svg   viewBox="0 0 953 576" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Component 1">
 <g id="Union 4" filter="url(#filter0_d)">
 <path d="M585.421 561.999V559.582L583.931 561.204L481.103 449.302L378.533 560.924V561.999H103V485.22H350.331L432.221 396.102L351.075 307.797H103V231.018H378.259L378.275 231L378.292 231.018H378.533V231.28L481.103 342.905L583.93 231L585.42 232.622V231.019H860V307.798H611.127L529.985 396.103L611.875 485.221H860V562L585.421 561.999Z" fill="#EDEDED"/>
 </g>
-<text id="PropsSupFan" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="166" y="461.785">{{propsSupFan}}%</tspan></text>
-<text id="PropsExFan" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="807" y="461.785">{{propsExFan}}%</tspan></text>
-<text id="PropsRecuperator" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="462" y="307.785">{{propsRecuperator}}%</tspan></text>
-<text id="PropsHeater" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="110" y="461.785">{{propsHeater}}%</tspan></text>
+<text  v-if="propsSupFan" id="PropsSupFan" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="166" y="461.785">{{propsSupFan}}%</tspan></text>
+<text v-if="propsExFan" id="PropsExFan" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="807" y="461.785">{{propsExFan}}%</tspan></text>
+<text v-if="propsRecuperator" id="PropsRecuperator" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="462" y="307.785">{{propsRecuperator}}%</tspan></text>
+<text v-if="propsHeater" id="PropsHeater" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="110" y="461.785">{{propsHeater}}%</tspan></text>
 <g id="Path 157" filter="url(#filter1_d)">
 <path d="M113 471H127.527L134.682 478L141.836 471H157" stroke="#707070"/>
 </g>
@@ -95,7 +95,7 @@
 <g class="ArSup" id="ArSup_5" filter="url(#filter8_d)">
 <path d="M220.237 526.431L232.501 533.931C232.572 533.976 232.653 534 232.735 534C232.818 534 232.899 533.978 232.971 533.934C233.042 533.89 233.101 533.827 233.142 533.751C233.183 533.675 233.203 533.589 233.202 533.502V528.28H244.797C244.909 528.28 245 528.105 245 527.888V524.112C245 523.897 244.907 523.719 244.797 523.719H233.202V518.497C233.203 518.41 233.182 518.324 233.141 518.248C233.1 518.172 233.041 518.109 232.97 518.066C232.898 518.022 232.817 517.999 232.734 518C232.652 518.001 232.571 518.025 232.5 518.069L220.237 525.57C220.165 525.613 220.105 525.675 220.064 525.751C220.022 525.827 220 525.913 220 526C220 526.088 220.022 526.174 220.064 526.249C220.105 526.325 220.165 526.388 220.237 526.431Z" />
 </g>
-<g id="ExFilter" filter="url(#filter28_d)">
+<g class="tooltip item" id="ExFilter" filter="url(#filter28_d)"  >
 <g id="Group 196">
 <g id="Group 195">
 <path id="Rectangle 177" d="M151.161 246.996H119.693C117.455 246.996 115.641 248.972 115.641 251.409V287.407C115.641 289.844 117.455 291.82 119.693 291.82H151.161C153.398 291.82 155.212 289.844 155.212 287.407V251.409C155.212 248.972 153.398 246.996 151.161 246.996Z" stroke="black" stroke-miterlimit="10"/>
@@ -111,7 +111,7 @@
 </g>
 <path id="Path 212_2" d="M823.137 265.445L832.298 271.208L823.137 276.971C823.074 277.011 823.021 277.068 822.984 277.137C822.948 277.206 822.928 277.285 822.928 277.365C822.928 277.445 822.948 277.523 822.984 277.592C823.021 277.661 823.074 277.719 823.137 277.759L833.383 284.203C833.446 284.243 833.518 284.264 833.592 284.264C833.665 284.264 833.737 284.243 833.8 284.203C833.864 284.163 833.917 284.106 833.953 284.036C833.99 283.967 834.009 283.889 834.009 283.809V258.607C834.009 258.528 833.99 258.449 833.953 258.38C833.917 258.311 833.864 258.253 833.8 258.213C833.737 258.173 833.665 258.152 833.592 258.152C833.518 258.152 833.446 258.173 833.383 258.213L823.134 264.658C823.071 264.698 823.018 264.755 822.982 264.825C822.946 264.894 822.927 264.973 822.927 265.052C822.927 265.132 822.947 265.211 822.984 265.28C823.021 265.349 823.074 265.406 823.137 265.445Z" fill="#FF7024"/>
 </g>
-<g id="Heater" filter="url(#filter30_d)">
+<g v-if="propsHeater" id="Heater" filter="url(#filter30_d)">
 <path id="Path 165" d="M148.244 511.393H150.475L145.222 517.743L145.182 517.719L147.028 513.405H144.964C145.037 513.19 145.094 513.011 145.154 512.837C145.745 511.228 146.338 509.62 146.934 508.013C146.952 507.974 146.977 507.941 147.009 507.915C147.04 507.889 147.076 507.871 147.115 507.863C148.244 507.854 149.374 507.857 150.551 507.857L148.244 511.393Z" fill="#FF0000"/>
 <g id="Group 202">
 <g id="Group 201">
@@ -122,7 +122,7 @@
 <path id="Path 213" d="M146.613 523.852H137.196V513.593C137.196 513.483 137.156 513.378 137.085 513.3C137.013 513.222 136.916 513.178 136.815 513.178H133.15C133.049 513.178 132.952 513.222 132.88 513.3C132.809 513.378 132.769 513.483 132.769 513.593V523.852H123.353C123.252 523.852 123.155 523.896 123.084 523.974C123.012 524.052 122.972 524.158 122.972 524.268V528.263C122.972 528.373 123.012 528.478 123.084 528.556C123.155 528.634 123.252 528.678 123.353 528.678H132.771V538.928C132.771 539.038 132.811 539.143 132.882 539.221C132.954 539.299 133.051 539.343 133.152 539.343H136.819C136.92 539.343 137.017 539.299 137.089 539.221C137.16 539.143 137.2 539.038 137.2 538.928V528.674H146.613C146.714 528.674 146.811 528.63 146.882 528.552C146.954 528.474 146.994 528.369 146.994 528.259V524.266C146.994 524.156 146.953 524.051 146.882 523.973C146.81 523.896 146.714 523.852 146.613 523.852Z" fill="#FF0000"/>
 </g>
 </g>
-<g id="SupFan" filter="url(#filter31_d)">
+<g v-if="propsSupFan" id="SupFan" filter="url(#filter31_d)">
 <g id="Group 203">
 <path id="Path 214" d="M171.591 527.725L190.673 539.726C190.746 539.772 190.828 539.797 190.912 539.797C190.996 539.797 191.079 539.773 191.152 539.727C191.224 539.681 191.285 539.615 191.326 539.536C191.368 539.456 191.39 539.366 191.389 539.275V515.272C191.39 515.18 191.368 515.09 191.326 515.011C191.284 514.932 191.224 514.866 191.151 514.82C191.078 514.774 190.996 514.75 190.912 514.751C190.828 514.751 190.745 514.775 190.673 514.821L171.591 526.823C171.518 526.869 171.457 526.934 171.415 527.013C171.373 527.093 171.35 527.183 171.35 527.274C171.35 527.366 171.373 527.456 171.415 527.535C171.457 527.614 171.518 527.68 171.591 527.725Z" fill="#00A763"/>
 </g>
@@ -132,7 +132,7 @@
 </g>
 </g>
 </g>
-<g id="ExFan" filter="url(#filter32_d)">
+<g v-if="propsExFan" id="ExFan" filter="url(#filter32_d)">
 <g id="Group 203_2">
 <path id="Path 214_2" d="M841.59 525.25L822.508 513.249C822.436 513.203 822.353 513.178 822.269 513.178C822.185 513.178 822.102 513.202 822.03 513.248C821.957 513.294 821.897 513.36 821.855 513.439C821.813 513.519 821.791 513.609 821.792 513.7V537.703C821.792 537.795 821.813 537.885 821.855 537.964C821.897 538.043 821.957 538.109 822.03 538.155C822.103 538.201 822.185 538.224 822.269 538.224C822.353 538.224 822.436 538.2 822.508 538.154L841.59 526.152C841.663 526.106 841.724 526.041 841.766 525.962C841.809 525.882 841.831 525.792 841.831 525.701C841.831 525.609 841.809 525.519 841.766 525.44C841.724 525.361 841.663 525.295 841.59 525.25Z" fill="#00A763"/>
 </g>
@@ -142,7 +142,7 @@
 </g>
 </g>
 </g>
-<g id="Recuperator" filter="url(#filter33_d)">
+<g v-if="propsRecuperator" id="Recuperator" filter="url(#filter33_d)">
 <g id="Group 215">
 <g id="Group 214">
 <g id="Group 213">
@@ -191,20 +191,20 @@
 <path id="Path 233" d="M666.877 139.752L667.864 139.588L666.877 139.752C666.891 139.837 666.887 139.924 666.865 140.005L666.859 140.026L666.854 140.047C666.826 140.173 666.796 140.227 666.783 140.246C666.775 140.258 666.766 140.269 666.734 140.287C666.635 140.343 666.376 140.423 665.743 140.43C665.072 140.435 664.401 140.438 663.729 140.439C663.059 140.439 662.388 140.437 661.717 140.43L661.717 140.43H661.708C661.641 140.43 661.591 140.431 661.552 140.432C661.543 140.432 661.535 140.433 661.529 140.433C661.505 140.433 661.494 140.434 661.484 140.434C661.382 140.433 661.273 140.399 661.173 140.323L660.577 141.114L661.173 140.323C661.071 140.246 660.98 140.128 660.926 139.974C660.874 139.822 660.871 139.651 660.92 139.496L659.966 139.195L660.92 139.496C660.969 139.341 661.06 139.229 661.157 139.164L661.211 139.128L661.261 139.085C661.688 138.712 662.076 138.392 662.474 138.069L662.474 138.069L662.477 138.065C662.824 137.78 663.181 137.485 663.533 137.179C664.087 136.747 664.585 136.242 665.018 135.676L665.036 135.652L665.053 135.627C665.053 135.627 665.057 135.62 665.071 135.603C665.085 135.585 665.103 135.562 665.127 135.532C665.136 135.521 665.145 135.509 665.155 135.497C665.198 135.444 665.252 135.376 665.306 135.306C665.442 135.13 665.619 134.885 665.759 134.597C665.899 134.311 666.03 133.925 666.008 133.482C665.984 133.012 665.791 132.569 665.432 132.196C665.085 131.835 664.639 131.665 664.175 131.694C663.766 131.719 663.428 131.892 663.2 132.038C662.85 132.261 662.481 132.623 662.327 132.775C662.31 132.791 662.295 132.805 662.284 132.816L662.278 132.821L662.19 132.889L662.12 132.974L662.086 133.014C662.086 133.014 662.086 133.015 662.086 133.015C661.99 133.13 661.874 133.183 661.772 133.192C661.671 133.201 661.558 133.17 661.455 133.082C661.349 132.991 661.262 132.844 661.236 132.66C661.21 132.476 661.25 132.294 661.337 132.154L661.346 132.14L661.355 132.126C661.758 131.428 662.372 130.941 663.059 130.733C663.743 130.526 664.474 130.601 665.117 130.954C665.764 131.308 666.288 131.924 666.564 132.703C666.83 133.454 666.839 134.286 666.593 135.042C665.994 136.035 665.284 136.94 664.481 137.737L662.44 139.763L665.298 139.44C665.699 139.395 666.102 139.375 666.505 139.381L666.519 139.381L666.534 139.381C666.573 139.38 666.616 139.39 666.659 139.413C666.703 139.436 666.75 139.475 666.791 139.534C666.832 139.593 666.863 139.667 666.877 139.752Z" fill="white" stroke="black" stroke-width="2"/>
 <path id="Path 234" d="M636.462 136.148L636.458 136.148C635.309 136.149 634.172 135.852 633.14 135.276C632.107 134.7 631.207 133.859 630.52 132.816C629.832 131.773 629.379 130.56 629.203 129.278C629.027 127.996 629.134 126.687 629.515 125.462L629.515 125.462L629.517 125.453C630.536 122.061 633.407 119.994 637.393 119.973C638.863 120.165 640.251 120.877 641.339 122.022L641.35 122.033L641.361 122.044C641.849 122.526 642.06 122.979 642.11 123.35C642.157 123.705 642.069 124.08 641.772 124.469L641.754 124.493L641.737 124.517C641.63 124.676 641.496 124.798 641.351 124.881C641.22 124.956 641.08 124.998 640.941 125.009C640.554 124.975 640.175 124.805 639.863 124.507C638.944 123.606 637.755 123.06 636.49 122.982L636.457 122.98L636.424 122.98C635.56 122.983 634.728 123.287 634.052 123.833C633.453 124.311 632.956 124.913 632.588 125.598C632.219 126.285 631.986 127.042 631.899 127.824L631.899 127.826L631.886 127.941L631.876 128.04L631.885 128.14L631.894 128.245C631.955 129.052 632.186 129.837 632.572 130.539C632.96 131.244 633.497 131.85 634.147 132.304L634.157 132.311L634.167 132.317C635.813 133.409 637.516 132.875 638.711 132.324C639.083 132.152 639.488 131.937 639.834 131.753C640.018 131.655 640.185 131.567 640.321 131.499C640.546 131.385 640.725 131.305 640.871 131.255C641.022 131.203 641.082 131.203 641.082 131.203L641.094 131.203L641.106 131.203C641.231 131.205 641.359 131.239 641.48 131.311L641.99 130.451L641.48 131.311C641.601 131.383 641.713 131.491 641.799 131.635L641.811 131.654L641.823 131.672C642.199 132.236 642.178 132.698 641.988 133.143C641.77 133.653 641.307 134.165 640.749 134.621C639.496 135.623 637.994 136.153 636.462 136.148Z" fill="white" stroke="black" stroke-width="2"/>
 </g>
-<g class="cursorP" @click="Stop" id="ButtonStop" filter="url(#filter43_d)">
+<g v-if="work" class="cursorP" @click="Stop" id="ButtonStop" filter="url(#filter43_d)">
 <path id="Rectangle 169" d="M308.004 103.004H211.771C201.509 103.004 193.191 112.066 193.191 123.244C193.191 134.422 201.509 143.484 211.771 143.484H308.004C318.265 143.484 326.584 134.422 326.584 123.244C326.584 112.066 318.265 103.004 308.004 103.004Z" fill="#CB0000"/>
 <text id="1" fill="white" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="18" letter-spacing="0em"><tspan x="236.109" y="128.652">&#x41e;&#x442;&#x43a;&#x43b;.</tspan></text>
 <path id="Rectangle 170" d="M224.993 121.936C224.993 115.344 220.087 110 214.036 110C207.984 110 203.078 115.344 203.078 121.936C203.078 128.529 207.984 133.873 214.036 133.873C220.087 133.873 224.993 128.529 224.993 121.936Z" fill="white"/>
 </g>
-<g class="cursorP" :ripple="{ color: 'yellow' }" @click="Start" id="ButtonStart" filter="url(#filter44_d)">
+<g v-if="!work" class="cursorP" :ripple="{ color: 'yellow' }" @click="Start" id="ButtonStart" filter="url(#filter44_d)">
 <path id="Rectangle 169_2" d="M308.004 103.004H211.771C201.509 103.004 193.191 112.066 193.191 123.244C193.191 134.422 201.509 143.484 211.771 143.484H308.004C318.265 143.484 326.584 134.422 326.584 123.244C326.584 112.066 318.265 103.004 308.004 103.004Z" fill="#00A763"/>
 <text id="2" fill="white" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="225.099" y="126.785">&#x412;&#x43a;&#x43b;.</tspan></text>
 <path id="Rectangle 170_2" d="M317.73 125.588C317.73 118.995 312.824 113.651 306.772 113.651C300.721 113.651 295.815 118.995 295.815 125.588C295.815 132.18 300.721 137.524 306.772 137.524C312.824 137.524 317.73 132.18 317.73 125.588Z" fill="white"/>
 </g>
-<g @click="SetChangeSeson" class="cursorP" id="VectorSnow" filter="url(#filter45_d)">
+<g v-if="!seson" @click="SetChangeSeson" class="cursorP" id="VectorSnow" filter="url(#filter45_d)">
 <path d="M461.359 132.65L458.21 131.572L460.95 131.136C461.624 131.028 462.026 130.616 461.841 130.217L461.512 129.491C461.335 129.092 460.636 128.853 459.961 128.961L453.558 129.978L447.789 128L453.566 126.022L459.969 127.039C460.644 127.147 461.335 126.908 461.52 126.509L461.849 125.783C462.026 125.384 461.632 124.972 460.958 124.864L458.218 124.428L461.367 123.35C461.97 123.144 462.179 122.684 461.833 122.323L461.199 121.672C460.853 121.311 460.074 121.189 459.471 121.395L456.322 122.473L457.053 120.847C457.23 120.448 456.836 120.036 456.161 119.928L454.94 119.736C454.265 119.628 453.574 119.867 453.389 120.266L451.678 124.062L445.901 126.041V122.08L450.585 119.3C451.075 119.009 451.075 118.531 450.585 118.241L449.693 117.711C449.203 117.42 448.4 117.42 447.91 117.711L445.909 118.902V116.75C445.909 116.337 445.347 116 444.648 116H443.386C442.687 116 442.125 116.337 442.125 116.75V118.911L440.124 117.72C439.634 117.43 438.831 117.43 438.341 117.72L437.417 118.25C436.927 118.541 436.927 119.019 437.417 119.309L442.101 122.089V126.05L436.324 124.072L434.613 120.275C434.436 119.877 433.737 119.638 433.062 119.745L431.841 119.938C431.166 120.045 430.764 120.458 430.949 120.856L431.68 122.483L428.531 121.405C427.928 121.198 427.157 121.32 426.803 121.681L426.168 122.333C425.823 122.694 426.024 123.148 426.634 123.359L429.784 124.438L427.044 124.864C426.369 124.972 425.968 125.384 426.152 125.783L426.482 126.509C426.659 126.908 427.358 127.147 428.032 127.039L434.436 126.022L440.213 128L434.436 129.978L428.032 128.961C427.358 128.853 426.667 129.092 426.482 129.491L426.152 130.217C425.976 130.616 426.369 131.028 427.044 131.136L429.784 131.572L426.634 132.65C426.032 132.856 425.823 133.316 426.168 133.677L426.803 134.328C427.149 134.689 427.928 134.811 428.531 134.605L431.68 133.527L430.949 135.153C430.772 135.552 431.166 135.964 431.841 136.072L433.062 136.264C433.737 136.372 434.428 136.133 434.613 135.734L436.324 131.938L442.101 129.959V133.92L437.417 136.7C436.927 136.991 436.927 137.469 437.417 137.759L438.308 138.289C438.799 138.58 439.602 138.58 440.092 138.289L442.093 137.098V139.25C442.093 139.663 442.655 140 443.354 140H444.616C445.315 140 445.877 139.663 445.877 139.25V137.089L447.877 138.28C448.368 138.57 449.171 138.57 449.661 138.28L450.553 137.75C451.043 137.459 451.043 136.981 450.553 136.691L445.869 133.911V129.95L451.646 131.928L453.357 135.725C453.534 136.123 454.233 136.363 454.908 136.255L456.129 136.062C456.804 135.955 457.205 135.542 457.021 135.144L456.29 133.517L459.439 134.595C460.042 134.802 460.813 134.68 461.166 134.319L461.801 133.667C462.171 133.316 461.97 132.856 461.359 132.65Z" fill="#00008B"/>
 </g>
-<g @click="SetChangeSeson" class="cursorP"  id="VectorSun" filter="url(#filter46_d)">
+<g v-if="seson" @click="SetChangeSeson" class="cursorP"  id="VectorSun" filter="url(#filter46_d)">
 <path d="M443.001 122.375C438.042 122.375 434.001 124.9 434.001 128C434.001 131.1 438.042 133.625 443.001 133.625C447.961 133.625 452.002 131.1 452.002 128C452.002 124.9 447.961 122.375 443.001 122.375ZM466.102 127.092L457.224 124.32L460.365 118.438C460.786 117.641 459.577 116.885 458.311 117.154L448.898 119.117L444.454 113.562C443.854 112.813 442.148 112.813 441.548 113.562L437.113 119.111L427.691 117.148C426.416 116.885 425.207 117.641 425.638 118.432L428.779 124.314L419.9 127.092C418.7 127.467 418.7 128.533 419.9 128.908L428.779 131.68L425.638 137.568C425.216 138.365 426.425 139.121 427.691 138.852L437.104 136.889L441.539 142.438C442.139 143.188 443.845 143.188 444.445 142.438L448.88 136.889L458.293 138.852C459.568 139.115 460.777 138.359 460.346 137.568L457.205 131.686L466.084 128.914C467.302 128.533 467.302 127.467 466.102 127.092ZM451.486 133.303C446.808 136.227 439.195 136.227 434.516 133.303C429.838 130.379 429.838 125.621 434.516 122.697C439.195 119.773 446.808 119.773 451.486 122.697C456.164 125.621 456.164 130.379 451.486 133.303Z" fill="#FFFF00"/>
 </g>
 <g id="Line 51" filter="url(#filter47_d)">
@@ -213,13 +213,13 @@
 <g class="blink" id="VectorDanger" filter="url(#filter48_d)">
 <path d="M553.413 557.174C557.931 561.985 552.26 568 543.235 568H425.763C416.721 568 411.076 561.976 415.586 557.174L474.322 494.607C478.843 489.793 490.165 489.802 494.678 494.607L553.413 557.174ZM484.5 544.238C478.281 544.238 473.24 547.336 473.24 551.156C473.24 554.977 478.281 558.074 484.5 558.074C490.719 558.074 495.76 554.977 495.76 551.156C495.76 547.336 490.719 544.238 484.5 544.238ZM473.809 519.372L475.625 539.825C475.71 540.782 476.998 541.531 478.558 541.531H490.442C492.002 541.531 493.29 540.782 493.375 539.825L495.191 519.372C495.283 518.338 493.943 517.469 492.258 517.469H476.742C475.057 517.469 473.717 518.338 473.809 519.372Z" fill="#CB0000"/>
 </g>
-<g id="CoolerComp">
+<g v-if="propsCooler" id="CoolerComp">
 <path id="Path 213_2" d="M137.616 523.949H147.291C147.395 523.949 147.494 523.996 147.568 524.079C147.641 524.163 147.683 524.276 147.683 524.395V528.704C147.683 528.823 147.642 528.937 147.568 529.021C147.495 529.105 147.395 529.153 147.291 529.153H137.62L123.392 529.157C123.288 529.157 123.188 529.11 123.115 529.026C123.041 528.942 123 528.828 123 528.709V524.397C123 524.278 123.041 524.164 123.115 524.08C123.188 523.996 123.288 523.949 123.392 523.949H137.616Z" fill="#00BFFF"/>
 <g id="Group">
 <path id="Vector" d="M153.631 511.905H152.271L152.681 511.184C152.735 511.091 152.703 510.971 152.61 510.916C152.517 510.862 152.399 510.894 152.346 510.988L151.825 511.905H150.789L151.843 510.052C151.897 509.958 151.866 509.838 151.773 509.784C151.68 509.73 151.562 509.762 151.509 509.856L150.342 511.905H148.411L147.828 510.881L148.794 509.184H151.127C151.232 509.184 151.32 509.096 151.32 508.988C151.32 508.88 151.232 508.792 151.127 508.792H149.016L149.534 507.883L150.577 507.883C150.683 507.883 150.77 507.795 150.77 507.687C150.77 507.579 150.683 507.491 150.577 507.491L149.756 507.491L150.437 506.294C150.491 506.201 150.459 506.081 150.366 506.027C150.274 505.972 150.156 506.004 150.102 506.099L149.421 507.295L149.011 506.574C148.958 506.481 148.84 506.448 148.747 506.502C148.655 506.556 148.623 506.676 148.676 506.77L149.198 507.687L148.681 508.596L147.627 506.742C147.573 506.648 147.455 506.616 147.363 506.67C147.271 506.724 147.239 506.844 147.292 506.938L148.458 508.987L147.493 510.685H146.327L145.361 508.988L146.527 506.938C146.58 506.844 146.549 506.724 146.456 506.67C146.364 506.616 146.246 506.648 146.192 506.742L145.138 508.596L144.621 507.687L145.143 506.77C145.196 506.676 145.164 506.556 145.072 506.502C144.98 506.447 144.861 506.48 144.808 506.574L144.398 507.295L143.719 506.098C143.665 506.004 143.547 505.972 143.455 506.026C143.363 506.08 143.331 506.2 143.384 506.294L144.065 507.49H143.245C143.139 507.49 143.052 507.579 143.052 507.686C143.052 507.794 143.139 507.882 143.245 507.882H144.288L144.805 508.791H142.696C142.59 508.791 142.503 508.879 142.503 508.987C142.503 509.095 142.59 509.183 142.696 509.183H145.029L145.994 510.881L145.411 511.905H143.48L142.313 509.856C142.259 509.762 142.141 509.73 142.049 509.784C141.956 509.838 141.925 509.958 141.978 510.052L143.034 511.905H141.999L141.478 510.989C141.424 510.895 141.306 510.863 141.214 510.917C141.122 510.971 141.09 511.091 141.143 511.185L141.554 511.905H140.193C140.087 511.905 140 511.993 140 512.101C140 512.209 140.087 512.297 140.193 512.297H141.554L141.144 513.018C141.09 513.112 141.122 513.232 141.214 513.286C141.245 513.304 141.278 513.312 141.311 513.312C141.378 513.312 141.443 513.277 141.479 513.214L142 512.297H143.035L141.98 514.151C141.927 514.244 141.958 514.364 142.051 514.419C142.081 514.436 142.114 514.445 142.147 514.445C142.214 514.445 142.279 514.41 142.315 514.347L143.482 512.297H145.413L145.996 513.321L145.03 515.018H142.698C142.591 515.018 142.505 515.107 142.505 515.214C142.505 515.322 142.591 515.41 142.698 515.41H144.807L144.289 516.319H143.246C143.14 516.319 143.053 516.407 143.053 516.515C143.053 516.623 143.14 516.711 143.246 516.711H144.067L143.386 517.907C143.333 518 143.364 518.121 143.457 518.175C143.487 518.193 143.52 518.201 143.553 518.201C143.62 518.201 143.685 518.166 143.721 518.103L144.401 516.907L144.812 517.628C144.848 517.691 144.912 517.726 144.979 517.726C145.012 517.726 145.045 517.718 145.076 517.7C145.168 517.646 145.2 517.526 145.147 517.432L144.624 516.515L145.141 515.606L146.196 517.46C146.232 517.523 146.297 517.557 146.364 517.557C146.396 517.557 146.43 517.549 146.46 517.532C146.552 517.477 146.584 517.358 146.531 517.264L145.364 515.214L146.33 513.518H147.497L148.462 515.214L147.295 517.264C147.242 517.358 147.274 517.478 147.366 517.532C147.396 517.55 147.429 517.558 147.463 517.558C147.53 517.558 147.595 517.523 147.63 517.46L148.685 515.606L149.202 516.515L148.681 517.432C148.627 517.525 148.659 517.645 148.752 517.7C148.783 517.717 148.816 517.726 148.848 517.726C148.916 517.726 148.981 517.69 149.016 517.628L149.427 516.907L150.108 518.103C150.144 518.167 150.208 518.201 150.276 518.201C150.308 518.201 150.341 518.193 150.372 518.176C150.464 518.121 150.495 518.002 150.443 517.908L149.762 516.71H150.582C150.689 516.71 150.775 516.623 150.775 516.515C150.775 516.407 150.689 516.319 150.582 516.319H149.539L149.022 515.41L151.131 515.41C151.237 515.41 151.324 515.322 151.324 515.214C151.324 515.106 151.237 515.018 151.131 515.018L148.799 515.018L147.833 513.321L148.416 512.297H150.347L151.514 514.347C151.549 514.409 151.614 514.445 151.681 514.445C151.714 514.445 151.747 514.436 151.778 514.419C151.87 514.364 151.901 514.245 151.848 514.151L150.791 512.297H151.826L152.349 513.214C152.385 513.277 152.45 513.312 152.516 513.312C152.55 513.312 152.583 513.304 152.613 513.286C152.706 513.232 152.737 513.113 152.684 513.018L152.274 512.297H153.635C153.74 512.297 153.828 512.209 153.828 512.101C153.825 511.993 153.738 511.905 153.631 511.905ZM147.967 512.297L147.607 512.93L147.495 513.126H147.272H146.552H146.329L146.217 512.93L145.858 512.297L145.746 512.101L145.858 511.905L146.218 511.273L146.33 511.077H146.552H147.272H147.496L147.607 511.273L147.967 511.905L148.078 512.101L147.967 512.297Z" fill="#00BFFF"/>
 </g>
 </g>
-<text id="PropsCooler" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="110" y="461.785">{{propsCooler}}%</tspan></text>
+<text v-if="propsCooler" id="PropsCooler" fill="#707070" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="14" letter-spacing="0em"><tspan x="110" y="461.785">{{propsCooler}}%</tspan></text>
 </g>
 <defs>
 <filter id="filter0_d" x="99" y="231" width="765" height="339" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -665,12 +665,9 @@
 </filter>
 </defs>
 </svg>
-    <div>
       <AlarmText
         :alarms="alarms"
      />
-    </div>
-    </div>
     <Spinner v-if="!isLoad"/>
     <SliderUst v-if="isLoad"
     :seson="seson"
@@ -684,7 +681,7 @@
     :dialog="changeSesonDialog"
     @setDialog = "SetChangeSesonDialog"
     />
-
+</div>
 </template>
 
 <script>
@@ -692,7 +689,7 @@
 import { serverMessageTry } from 'src/fun/websocket/websocket.js';
 import { useQuasar } from 'quasar';
 import AlarmText from 'components/AlarmText/AlarmText.vue';
-import { Arrows, ArrowBlink } from './Arrow.js';
+import { Arrows } from './Arrow.js';
 import Spinner from '../../components/Spinner/Spinner.vue';
 import SliderUst from '../../components/Dialogs/SliderUst.vue';
 import changeSeson from '../../components/Dialogs/ChangeSeson.vue';
@@ -700,18 +697,19 @@ import changeSeson from '../../components/Dialogs/ChangeSeson.vue';
 export default {
   data() {
     return {
+      isHovering: false,
       PLC: '',
-      seson: '1',
+      seson: null, // 0 - Зима 1-Лето
       ustH: 22,
       ustC: 24,
       ustTemp: '',
-      work: '',
+      work: null,
       alarms: '',
-      propsCooler: '',
-      propsHeater: '',
-      propsSupFan: '',
-      propsExFan: '',
-      propsRecuperator: '',
+      propsCooler: null,
+      propsHeater: null,
+      propsSupFan: null,
+      propsExFan: null,
+      propsRecuperator: null,
       tRoom: '',
       tNar: '',
       tPritok: '',
@@ -746,48 +744,24 @@ export default {
       this.changeSesonDialog = !this.changeSesonDialog;
     },
     Start() {
-      const start = {
+      this.$socket.send(JSON.stringify({
         Message: 'setMain',
         Ahu: 'On',
-      };
-      this.$socket.send(JSON.stringify(start));
+      }));
     },
     Stop() {
-      const stop = {
+      this.$socket.send(JSON.stringify({
         Message: 'setMain',
         Ahu: 'Off',
-      };
-      this.$socket.send(JSON.stringify(stop));
+      }));
     },
     //-------------------------------------------------------------------------
     UstTemp(PLC) {
       try {
-        let mes = '';
-        if (PLC.seson === '1') {
-          mes = `${PLC.ustC}C° / ${PLC.tPritok}C°`;
-          document.getElementById('VectorSnow').style.display = 'none';
-          document.getElementById('VectorSun').style.display = 'block';
+        if (+PLC.seson) {
+          return `${PLC.ustC}C° / ${PLC.tPritok}C°`;
         }
-        if (PLC.seson === '0') {
-          mes = `${PLC.ustH}C° / ${PLC.tPritok}C°`;
-          document.getElementById('VectorSnow').style.display = 'block';
-          document.getElementById('VectorSun').style.display = 'none';
-        }
-        return mes;
-      } catch (error) {
-        return '';
-      }
-    },
-    Work(PLC) {
-      try {
-        if (PLC.work === '0') {
-          document.getElementById('ButtonStart').style.display = 'block';
-          document.getElementById('ButtonStop').style.display = 'none';
-          return '';
-        }
-        document.getElementById('ButtonStart').style.display = 'none';
-        document.getElementById('ButtonStop').style.display = 'block';
-        return '';
+        return `${PLC.ustH}C° / ${PLC.tPritok}C°`;
       } catch (error) {
         return '';
       }
@@ -806,90 +780,13 @@ export default {
         return '';
       }
     },
-    SupFan(PLC) {
-      try {
-        const Fan = +PLC.propsSupFan;
-        if (Fan) {
-          document.getElementById('SupFan').style.display = 'block';
-          document.getElementById('PropsSupFan').style.display = 'block';
-          return Fan;
-        }
-        document.getElementById('SupFan').style.display = 'none';
-        document.getElementById('PropsSupFan').style.display = 'none';
-        return '';
-      } catch (error) {
-        return '';
-      }
-    },
-    ExFan(PLC) {
-      try {
-        const Fan = +PLC.propsExFan;
-        if (Fan) {
-          document.getElementById('ExFan').style.display = 'block';
-          document.getElementById('PropsExFan').style.display = 'block';
-          return Fan;
-        }
-        document.getElementById('ExFan').style.display = 'none';
-        document.getElementById('PropsExFan').style.display = 'none';
-        return '';
-      } catch (error) {
-        return '';
-      }
-    },
-    Recuperator(PLC) {
-      try {
-        const Rec = +PLC.propsRecuperator;
-        if (Rec) {
-          document.getElementById('Recuperator').style.display = 'block';
-          document.getElementById('PropsRecuperator').style.display = 'block';
-          return Rec;
-        }
-        document.getElementById('Recuperator').style.display = 'none';
-        document.getElementById('PropsRecuperator').style.display = 'none';
-        return '';
-      } catch (error) {
-        return '';
-      }
-    },
-    Heater(PLC) {
-      try {
-        const Heat = +PLC.propsHeater;
-        if (Heat) {
-          document.getElementById('Heater').style.display = 'block';
-          document.getElementById('PropsHeater').style.display = 'block';
-          return Heat;
-        }
-        document.getElementById('Heater').style.display = 'none';
-        document.getElementById('PropsHeater').style.display = 'none';
-        return false;
-      } catch (error) {
-        return '';
-      }
-    },
-    Cooler(PLC) {
-      try {
-        const Cool = +PLC.propsCooler;
-        if (Cool) {
-          document.getElementById('CoolerComp').style.display = 'block';
-          document.getElementById('PropsCooler').style.display = 'block';
-          return Cool;
-        }
-        document.getElementById('CoolerComp').style.display = 'none';
-        document.getElementById('PropsCooler').style.display = 'none';
-        return '';
-      } catch (error) {
-        return '';
-      }
-    },
     Alarms(PLC) {
       try {
         if (PLC.alarms) {
           document.getElementById('VectorDanger').style.display = 'block';
-          // document.getElementById('').style.display = 'block';
           return PLC.alarms;
         }
         document.getElementById('VectorDanger').style.display = 'none';
-        // document.getElementById('').style.display = 'none';
         return '';
       } catch (error) {
         return '';
@@ -907,51 +804,50 @@ export default {
         return '';
       }
     },
-    Websocket(mount) {
+    Websocket() {
       const $q = useQuasar();
       try {
-        if (mount) {
-          this.$socket.onmessage = (data) => {
-            const getJson = serverMessageTry(data.data);
-            console.log(getJson);
-            if (getJson.PLCdata) {
-              this.PLC = getJson.PLCdata;
-              this.$global.$emit('PLCdata', getJson.PLCdata);
-              this.isLoad = true;
-              this.ustTemp = this.UstTemp(this.PLC);
-              this.alarms = this.Alarms(this.PLC);
-              this.propsCooler = this.Cooler(this.PLC);
-              this.propsHeater = this.Heater(this.PLC);
-              this.propsSupFan = this.SupFan(this.PLC);
-              this.propsExFan = this.ExFan(this.PLC);
-              this.propsRecuperator = this.Recuperator(this.PLC);
-              this.tPritok = this.Sensors(this.PLC, 'tPritok', 'tPritok');
-              this.tVyt = this.Sensors(this.PLC, 'tVyt', 'tVyt');
-              this.tNar = this.Sensors(this.PLC, 'tNar', 'tNar');
-              this.tRoom = this.Sensors(this.PLC, 'tRoom', 'tRoom');
-              this.hum = this.Sensors(this.PLC, 'hum', 'HumDigit');
-              this.Sensors(this.PLC, 'hum', 'Hum');
-              this.co2 = this.Sensors(this.PLC, 'co2', 'CO2_Digit');
-              this.Sensors(this.PLC, 'co2', 'CO2');
-              this.Scheduler(this.PLC);
-              this.Work(this.PLC);
-              Arrows(this.PLC);
-              this.seson = this.PLC.seson;
-              this.ustH = +this.PLC.ustH;
-              this.ustC = +this.PLC.ustC;
-              this.$emit('alarmText', this.alarms);
-            }
+        this.$socket.onmessage = (data) => {
+          const getJson = serverMessageTry(data.data);
+          console.log(getJson);
+          if (getJson.PLCdata) {
+            this.PLC = getJson.PLCdata;
+            this.$global.$emit('PLCdata', getJson.PLCdata);
+            this.isLoad = true;
+            this.ustTemp = this.UstTemp(this.PLC);
+            this.alarms = this.Alarms(this.PLC);
+            this.propsCooler = +this.PLC.propsCooler;
+            this.propsHeater = +this.PLC.propsHeater;
+            this.propsSupFan = +this.PLC.propsSupFan;
+            this.propsExFan = +this.PLC.propsExFan;
+            this.propsRecuperator = +this.PLC.propsRecuperator;
+            this.tPritok = this.Sensors(this.PLC, 'tPritok', 'tPritok');
+            this.tVyt = this.Sensors(this.PLC, 'tVyt', 'tVyt');
+            this.tNar = this.Sensors(this.PLC, 'tNar', 'tNar');
+            this.tRoom = this.Sensors(this.PLC, 'tRoom', 'tRoom');
+            this.hum = this.Sensors(this.PLC, 'hum', 'HumDigit');
+            this.Sensors(this.PLC, 'hum', 'Hum');
+            this.co2 = this.Sensors(this.PLC, 'co2', 'CO2_Digit');
+            this.Sensors(this.PLC, 'co2', 'CO2');
+            this.Scheduler(this.PLC);
+            this.work = +this.PLC.work;
+            Arrows(this.PLC);
+            this.seson = +this.PLC.seson;
+            this.ustH = +this.PLC.ustH;
+            this.ustC = +this.PLC.ustC;
+            this.$emit('alarmText', this.alarms);
+          }
+          if (getJson.Message) {
             if (getJson.Message) {
-              if (getJson.Message) {
-                $q.notify({
-                  message: getJson.Message,
-                  color: 'secondary',
-                  position: 'top',
-                });
-              }
+              $q.notify({
+                message: getJson.Message,
+                color: 'secondary',
+                position: 'top',
+              });
             }
-          };
-        }
+          }
+        };
+
         return '';
       } catch (error) {
         return '';
@@ -960,16 +856,13 @@ export default {
 
   },
   mounted() {
-    console.log();
-    this.mount = true;
-    this.Websocket(this.mount);
-    this.blink = setInterval(() => {
-      ArrowBlink('ArRoom', 'ArEx', 'ArNar', 'ArSup');
-    }, 250);
+    this.Websocket();
+    // this.blink = setInterval(() => { // Костыль  - нужно переделать
+    //   ArrowBlink('ArRoom', 'ArEx', 'ArNar', 'ArSup');
+    // }, 1000);
   },
   unmounted() {
     clearInterval(this.blink);
-    this.mount = false;
   },
   watch: {
   },
@@ -984,9 +877,15 @@ export default {
 <style scoped>
 @import './MainPage.css';
    .svg{
-     width: 100%;
-     max-height: 576px;
-     justify-content: space-around;
+     /* width: 100%; */
+   }
+   .main{
+  max-width: 1200px;
+  position: absolute;
+  left:1%;
+  right:1%;
+  top:0;
+  bottom:0;
    }
    .cursorP{
      cursor: pointer;

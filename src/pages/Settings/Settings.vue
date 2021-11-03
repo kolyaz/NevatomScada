@@ -1,7 +1,6 @@
 <template>
-    <div class="flex settings">
-    <div class="" style="">
-    <div class="q-gutter-md" style="">
+<q-page>
+    <div class="q-gutter-md q-pa-md" style="max-width:330px; min-width:330px">
       <q-input v-if="ustH" color="teal" filled v-model="ustH" label="Уставка нагрева C°">
         <template v-slot:prepend>
           <q-icon name="thermostat" color="deep-orange"/>
@@ -58,7 +57,7 @@
 
     </div>
 
-  <div style="margin-top:40px" class=" q-gutter-md">
+  <div style="margin-top:40px; max-width: 330px" class=" q-gutter-md q-pa-md" >
     <div>
       <q-btn @click="SetSettings"   style="min-width: 330px" color="secondary" icon="done" label="Применить" />
     </div>
@@ -67,17 +66,15 @@
     </div>
       <div>
       <q-btn style="min-width: 330px" text-color="black"  color="warning" icon="settings_suggest" label="Дополнительные настройки ПЛК" />
+
     </div>
   </div>
-
-  </div>
-
-    <div>
+  <div>
       <AlarmText
         :alarms="alarms"
      />
     </div>
-    </div>
+  </q-page>
 </template>
 
 <script>
@@ -183,7 +180,4 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.settings{
-  justify-content: space-around;
-}
 </style>

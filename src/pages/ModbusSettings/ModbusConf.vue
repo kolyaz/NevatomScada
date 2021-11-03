@@ -6,6 +6,7 @@
       :columns="columns"
       row-key="name"
       binary-state-sort
+      hide-pagination
     >
       <template v-slot:body="props">
         <q-tr :props="props">
